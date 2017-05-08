@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:apps="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/s3_scroll_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/s3_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#eee"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <Spinner
+            android:id="@+id/s3_spinner_location"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginBottom="12dp"
+            android:textAlignment="center"
+            android:spinnerMode="dialog"
+            android:background="@drawable/circle_bg">
+
+        </Spinner>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            apps:errorEnabled="true">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/s3_edt_pname"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@drawable/edt_style"
+                android:hint="@string/product_name"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            apps:errorEnabled="true"
+            apps:errorTextAppearance="@color/colorPrimaryDark">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/s3_edt_description"
+                android:layout_width="match_parent"
+                android:layout_height="132dp"
+                android:background="@drawable/edt_style"
+                android:hint="@string/description"
+                android:inputType="text"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                apps:errorEnabled="true"
+                android:layout_weight="4">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/s3_edt_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:background="@drawable/edt_style"
+                    android:hint="@string/price"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/s3_spinner_currency"
+                android:layout_weight="1"
+                android:layout_marginBottom="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginStart="12dp"
+                android:textAlignment="center"
+                android:spinnerMode="dropdown"
+                android:background="@drawable/edt_style">
+
+            </Spinner>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/s3_btn_next"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/button_style"
+            android:text="@string/next"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+</ScrollView>

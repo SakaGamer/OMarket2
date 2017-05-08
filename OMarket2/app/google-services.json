@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "117197172181",
+    "firebase_url": "https://omarket-8a9ab.firebaseio.com",
+    "project_id": "omarket-8a9ab",
+    "storage_bucket": "omarket-8a9ab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:117197172181:android:b8d11fede4c454ff",
+        "android_client_info": {
+          "package_name": "kh.com.omarket"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "117197172181-smbd77kgf9ede5pjds2jrvb1lgenjjku.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kh.com.omarket",
+            "certificate_hash": "d87d899349e4445012f5318f01b1923e43e1dfae"
+          }
+        },
+        {
+          "client_id": "117197172181-7tv4thqn4fcalkdrb6pds3nl4gn3ovqb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwG9VRS7Xkkm3-Hyl6svocAfin9AYmjc0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "117197172181-7tv4thqn4fcalkdrb6pds3nl4gn3ovqb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

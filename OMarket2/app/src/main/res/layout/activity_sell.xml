@@ -1,0 +1,31 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sell_content_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical"
+    tools:context="kh.com.omarket.SellActivity3">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sell_txt_category"
+        android:text="@string/sell_category"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:paddingTop="24dp"
+        android:paddingBottom="12dp"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"/>
+
+    <GridView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sell_grid_category"
+        android:numColumns="2">
+
+    </GridView>
+
+</LinearLayout>
