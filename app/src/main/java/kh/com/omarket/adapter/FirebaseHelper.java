@@ -1,14 +1,16 @@
-package kh.com.omarket.CardView;
+package kh.com.omarket.adapter;
 
-import com.google.firebase.database.ChildEventListener;
+import android.util.Log;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseException;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import kh.com.omarket.model.Product;
 
 /**
  * Created by Saka on 29-Apr-17.
@@ -17,28 +19,11 @@ import java.util.List;
 public class FirebaseHelper {
 
     private DatabaseReference databaseReference;
-    private Boolean saved = false;
     private List<Product> products = new ArrayList<>();
 
     //  constructor
     public FirebaseHelper(DatabaseReference databaseReference) {
         this.databaseReference = databaseReference;
-    }
-
-    //  write if not null
-    public Boolean save (Product product){
-        if (product == null){
-            saved = false;
-        } else {
-            try{
-                databaseReference.child("products").push().setValue(product);
-                saved = true;
-            }catch(DatabaseException e){
-                e.printStackTrace();
-                saved = false;
-            }
-        }
-        return saved;
     }
 
     //  implement fetch data and fill list
@@ -60,11 +45,11 @@ public class FirebaseHelper {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 fetchData(dataSnapshot);
+                Log.d("onRetrieve", "retrieve data successful");
             }
-
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
+                Log.d("onRetrieve", "retrieve data failed");
             }
         });
         return products;
@@ -73,7 +58,7 @@ public class FirebaseHelper {
     private int getItemIndex(Product product){
         int index = -1;
         for (int i = 0; i < products.size(); i++){
-            if (products.get(i).equals(product.getKey())){
+            if (products.get(i).toString().equals(product.getKey())) {
                 index = i;
                 break;
             }

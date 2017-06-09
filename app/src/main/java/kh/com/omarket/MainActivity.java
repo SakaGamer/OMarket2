@@ -1,8 +1,6 @@
 package kh.com.omarket;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -23,15 +21,22 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.gson.Gson;
 
-import java.util.Locale;
+import kh.com.omarket.adapter.AdapterProductCard;
+import kh.com.omarket.adapter.FirebaseHelper;
+import kh.com.omarket.adapter.MyAdapter;
+import kh.com.omarket.model.Product;
 
-import kh.com.omarket.CardView.AdapterProductCard;
-import kh.com.omarket.CardView.Product;
+public class MainActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener,
+        AdapterProductCard.RecyclerViewItemClickListener, MyAdapter.RecyclerItemClickListener {
 
-public class MainActivity2 extends BaseActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
-
+    AdapterProductCard adapterForCardView = new AdapterProductCard(
+            Product.class,
+            R.layout.item_card_view,
+            AdapterProductCard.ProductViewHolder.class,
+            FirebaseDatabase.getInstance().getReference().child("products").limitToFirst(50));
     private DrawerLayout drawer;
     private TextView txtAccName, txtLogOut, txtEmail;
     private ImageView imgProfile;
@@ -71,7 +76,8 @@ public class MainActivity2 extends BaseActivity
         layoutManager.setReverseLayout(true);
         layoutManager.setStackFromEnd(true);
         recyclerView.setLayoutManager(layoutManager);
-        databaseReference = FirebaseDatabase.getInstance().getReference();
+        FirebaseHelper firebaseHelper = new FirebaseHelper(databaseReference);
+
 
         auth = FirebaseAuth.getInstance();
         authStateListener = new FirebaseAuth.AuthStateListener() {
@@ -120,21 +126,20 @@ public class MainActivity2 extends BaseActivity
             }
         };
 
-        AdapterProductCard adapterForCardView = new AdapterProductCard(
-                Product.class,
-                R.layout.item_card_view,
-                AdapterProductCard.ProductViewHolder.class,
-                databaseReference.child("products").limitToFirst(100));
         recyclerView.setAdapter(adapterForCardView);
         adapterForCardView.notifyDataSetChanged();
+        recyclerView.setAdapter(adapterForCardView);
+        adapterForCardView.setRecyclerViewItemClickListener(this);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        if (getClass() == MainActivity2.class){
+
+        if (getClass() == MainActivity.class) {
             navigationView.setCheckedItem(R.id.nav_home);
         }
+
         auth.addAuthStateListener(authStateListener);
     }
 
@@ -173,23 +178,22 @@ public class MainActivity2 extends BaseActivity
         } else if (id == R.id.nav_about) {
             //startActivity(new Intent(getApplicationContext(), AboutActivity.class));
         } else if (id == R.id.nav_settings){
-            if (Locale.getDefault() == Locale.ENGLISH ){
-                changeToLocale("km");
-            } else {
-                changeToLocale("en");
-            }
+//            if (Locale.getDefault() == Locale.ENGLISH ){
+//                changeToLocale("km");
+//            } else {
+//                changeToLocale("en");
+//            }
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
-    private void changeToLocale(String local){
-        Locale locale = new Locale(local);
-        Locale.setDefault(Locale.ENGLISH);
-        Configuration configuration = new Configuration();
-        configuration.locale = locale;
-        getApplicationContext().getResources().updateConfiguration(configuration,
-                getApplicationContext().getResources().getDisplayMetrics());
-        recreate();
+    @Override
+    public void onRecyclerItemClick(View v, final int position) {
+        Product product = adapterForCardView.getItem(position);
+        Gson gson = new Gson();
+        String data = gson.toJson(product);
+        startActivity(new Intent(getApplicationContext(),
+                ProductDetailActivity.class).putExtra("data", data));
     }
 }

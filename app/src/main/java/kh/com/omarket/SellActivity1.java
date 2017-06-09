@@ -1,9 +1,9 @@
 package kh.com.omarket;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import kh.com.omarket.adapter.ProductAdapter;
 
 public class SellActivity1 extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
@@ -56,7 +58,7 @@ public class SellActivity1 extends AppCompatActivity implements AdapterView.OnIt
     protected void onStart() {
         super.onStart();
         auth.addAuthStateListener(authStateListener);
-        AdapterProductGrid adapterProductGrid = new AdapterProductGrid(getApplicationContext(),
+        ProductAdapter adapterProductGrid = new ProductAdapter(getApplicationContext(),
                 category);
         gridView.setAdapter(adapterProductGrid);
     }
@@ -71,6 +73,7 @@ public class SellActivity1 extends AppCompatActivity implements AdapterView.OnIt
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         startActivity(new Intent(getApplicationContext(), SellActivity3.class)
                 .putExtra("category", category[position]));
+        overridePendingTransition(R.anim.start_slide_to_left, R.anim.exit_slide_to_left);
         finish();
     }
 }

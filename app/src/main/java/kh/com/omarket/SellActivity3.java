@@ -5,23 +5,16 @@ import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
-import android.view.Gravity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
-import kh.com.omarket.CardView.Product;
 
 public class SellActivity3 extends AppCompatActivity implements View.OnClickListener {
 
@@ -119,7 +112,7 @@ public class SellActivity3 extends AppCompatActivity implements View.OnClickList
 //                    spinnerLocation.getSelectedItem().toString(), edtPrice.getText().toString()
 //                    +spinnerCurrency.getSelectedItem().toString());
 //            databaseReference.child("products").push().setValue(product);
-//            startActivity(new Intent(getApplicationContext(), MainActivity2.class));
+//            startActivity(new Intent(getApplicationContext(), MainActivity.class));
 //            finish();
             String cate = getIntent().getStringExtra("category");
             startActivity(new Intent(getApplicationContext(), test.class)
@@ -128,6 +121,7 @@ public class SellActivity3 extends AppCompatActivity implements View.OnClickList
             .putExtra("descr", edtDescr.getText().toString())
             .putExtra("location", spinnerLocation.getSelectedItem().toString())
             .putExtra("price", edtPrice.getText().toString() + spinnerCurrency.getSelectedItem().toString()));
+            overridePendingTransition(R.anim.start_slide_to_left, R.anim.exit_slide_to_left);
         }
     }
 }//end main class

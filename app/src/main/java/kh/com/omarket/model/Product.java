@@ -1,4 +1,4 @@
-package kh.com.omarket.CardView;
+package kh.com.omarket.model;
 
 public class Product {
 

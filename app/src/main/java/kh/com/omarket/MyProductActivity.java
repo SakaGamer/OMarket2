@@ -1,8 +1,8 @@
 package kh.com.omarket;
 
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -16,8 +16,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 import java.util.Map;
 
-import kh.com.omarket.CardView.AdapterProductCard;
-import kh.com.omarket.CardView.Product;
+import kh.com.omarket.adapter.AdapterProductCard;
+import kh.com.omarket.model.Product;
 
 public class MyProductActivity extends AppCompatActivity{
 

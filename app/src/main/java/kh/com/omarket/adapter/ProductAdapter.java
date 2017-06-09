@@ -1,20 +1,21 @@
-package kh.com.omarket;
+package kh.com.omarket.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-class AdapterProductGrid extends BaseAdapter {
+import kh.com.omarket.R;
+
+public class ProductAdapter extends BaseAdapter {
 
     private Context context;
     private String[] category;
     private int[] img;
 
-    public AdapterProductGrid(Context context, String[] category){
+    public ProductAdapter(Context context, String[] category) {
         this.context = context;
         this.category = category;
     }

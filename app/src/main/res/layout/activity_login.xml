@@ -2,12 +2,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/li_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#eee"
     android:orientation="vertical"
     android:padding="24dp"
-    android:background="#eee"
-    android:id="@+id/li_layout"
     tools:context="kh.com.omarket.RegistrationActivity">
 
     <TextView
@@ -48,30 +48,29 @@
             android:layout_width="match_parent"
             android:layout_height="52dp"
             android:background="@drawable/edt_style"
-            android:inputType="textPassword"
             android:hint="@string/password"
+            android:inputType="textPassword"
             android:paddingLeft="12dp"
             android:paddingRight="12dp"/>
     </android.support.design.widget.TextInputLayout>
 
     <Button
         android:id="@+id/li_btn_login"
-        android:layout_marginTop="12dp"
         android:layout_width="match_parent"
         android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/button_style"
         android:text="@string/sign_in"
         android:textColor="#ffffff"
-        android:textSize="18sp"
-        android:background="@drawable/button_style" />
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/li_txt_dont_have_acc"
-        android:layout_marginTop="24dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
         android:text="@string/dont_have_acc"
-        android:gravity="center"/>
-
+        android:textColor="@color/colorPrimaryDark" />
 
 </LinearLayout>

@@ -22,8 +22,7 @@
         android:id="@+id/image_select_txt_error"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="@string/error_null_cursor" />
+        android:layout_centerInParent="true" />
 
     <GridView
         android:id="@+id/image_select_grid_view"
@@ -31,8 +30,8 @@
         android:layout_height="match_parent"
         android:layout_below="@id/toolbar"
         android:paddingBottom="4dp"
-        android:paddingStart="4dp"
         android:paddingEnd="4dp"
+        android:paddingStart="4dp"
         android:paddingTop="4dp"
         android:stretchMode="columnWidth" />
 </RelativeLayout>
