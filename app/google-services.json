@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "117197172181-k5t3gn0akr04j8qf9n26otutv5e43cra.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kh.com.omarket",
+            "certificate_hash": "89169091ad412a6d97ad93a36919e77a95412089"
+          }
+        },
+        {
           "client_id": "117197172181-7tv4thqn4fcalkdrb6pds3nl4gn3ovqb.apps.googleusercontent.com",
           "client_type": 3
         }

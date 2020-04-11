@@ -3,13 +3,13 @@
     xmlns:apps="http://schemas.android.com/apk/res-auto"
     android:id="@+id/s3_scroll_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#eee">
 
     <LinearLayout
         android:id="@+id/s3_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#eee"
         android:orientation="vertical"
         android:padding="24dp">
 
@@ -20,7 +20,7 @@
             android:layout_marginBottom="12dp"
             android:textAlignment="center"
             android:spinnerMode="dialog"
-            android:background="@drawable/circle_bg">
+            android:background="@drawable/edit_text_bg">
 
         </Spinner>
 
@@ -33,7 +33,7 @@
                 android:id="@+id/s3_edt_pname"
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
-                android:background="@drawable/edt_style"
+                android:background="@drawable/edit_text_bg"
                 android:hint="@string/product_name"
                 android:inputType="text"
                 android:maxLines="1"
@@ -52,7 +52,7 @@
                 android:id="@+id/s3_edt_description"
                 android:layout_width="match_parent"
                 android:layout_height="132dp"
-                android:background="@drawable/edt_style"
+                android:background="@drawable/edit_text_bg"
                 android:hint="@string/description"
                 android:inputType="text"
                 android:paddingLeft="12dp"
@@ -75,7 +75,7 @@
                     android:id="@+id/s3_edt_price"
                     android:layout_width="match_parent"
                     android:layout_height="52dp"
-                    android:background="@drawable/edt_style"
+                    android:background="@drawable/edit_text_bg"
                     android:hint="@string/price"
                     android:inputType="number"
                     android:maxLines="1"
@@ -95,7 +95,7 @@
                 android:layout_marginStart="12dp"
                 android:textAlignment="center"
                 android:spinnerMode="dropdown"
-                android:background="@drawable/edt_style">
+                android:background="@drawable/edit_text_bg">
 
             </Spinner>
 
@@ -106,7 +106,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginTop="12dp"
-            android:background="@drawable/button_style"
+            android:background="@drawable/button_bg"
             android:text="@string/next"
             android:textAllCaps="false"
             android:textColor="#fff"

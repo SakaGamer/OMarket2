@@ -16,8 +16,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 import java.util.Map;
 
-import kh.com.omarket.adapter.AdapterProductCard;
-import kh.com.omarket.model.Product;
+import kh.com.omarket.adapters.AdapterProductCard;
+import kh.com.omarket.models.Product;
 
 public class MyProductActivity extends AppCompatActivity{
 

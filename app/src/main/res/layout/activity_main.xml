@@ -8,34 +8,24 @@
     tools:openDrawer="start">
 
     <LinearLayout
-        android:id="@+id/main_layout"
+        android:id="@+id/main_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="#ddd">
+        android:background="#eee"
+        android:orientation="vertical">
 
         <include
-            layout="@layout/app_bar_main2"
+            layout="@layout/app_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/main_recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:clipToPadding="true"
-            android:layout_marginTop="8dp">
-
-        </android.support.v7.widget.RecyclerView>
 
     </LinearLayout>
 
     <android.support.design.widget.NavigationView
-        android:id="@+id/nav_view"
+        android:id="@+id/navigation_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="#eee"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/activity_main_drawer" />

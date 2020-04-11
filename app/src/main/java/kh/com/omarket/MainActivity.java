@@ -19,28 +19,21 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.Gson;
 
-import kh.com.omarket.adapter.AdapterProductCard;
-import kh.com.omarket.adapter.FirebaseHelper;
-import kh.com.omarket.adapter.MyAdapter;
-import kh.com.omarket.model.Product;
+import kh.com.omarket.adapters.AdapterProductCard;
+import kh.com.omarket.adapters.MyAdapter;
+import kh.com.omarket.models.Product;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
         AdapterProductCard.RecyclerViewItemClickListener, MyAdapter.RecyclerItemClickListener {
 
-    AdapterProductCard adapterForCardView = new AdapterProductCard(
-            Product.class,
-            R.layout.item_card_view,
-            AdapterProductCard.ProductViewHolder.class,
-            FirebaseDatabase.getInstance().getReference().child("products").limitToFirst(50));
+    private AdapterProductCard adapterForCardView;
     private DrawerLayout drawer;
     private TextView txtAccName, txtLogOut, txtEmail;
     private ImageView imgProfile;
-    private DatabaseReference databaseReference;
     private FirebaseAuth auth;
     private FirebaseAuth.AuthStateListener authStateListener;
     private RecyclerView recyclerView;
@@ -76,8 +69,6 @@ public class MainActivity extends AppCompatActivity
         layoutManager.setReverseLayout(true);
         layoutManager.setStackFromEnd(true);
         recyclerView.setLayoutManager(layoutManager);
-        FirebaseHelper firebaseHelper = new FirebaseHelper(databaseReference);
-
 
         auth = FirebaseAuth.getInstance();
         authStateListener = new FirebaseAuth.AuthStateListener() {
@@ -125,7 +116,11 @@ public class MainActivity extends AppCompatActivity
                 drawer.closeDrawer(GravityCompat.START);
             }
         };
-
+        adapterForCardView = new AdapterProductCard(
+                Product.class,
+                R.layout.item_card_view,
+                AdapterProductCard.ProductViewHolder.class,
+                FirebaseDatabase.getInstance().getReference().child("products"));
         recyclerView.setAdapter(adapterForCardView);
         adapterForCardView.notifyDataSetChanged();
         recyclerView.setAdapter(adapterForCardView);
@@ -177,12 +172,6 @@ public class MainActivity extends AppCompatActivity
             startActivity(new Intent(getApplicationContext(), MyProductActivity.class));
         } else if (id == R.id.nav_about) {
             //startActivity(new Intent(getApplicationContext(), AboutActivity.class));
-        } else if (id == R.id.nav_settings){
-//            if (Locale.getDefault() == Locale.ENGLISH ){
-//                changeToLocale("km");
-//            } else {
-//                changeToLocale("en");
-//            }
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;
@@ -194,6 +183,6 @@ public class MainActivity extends AppCompatActivity
         Gson gson = new Gson();
         String data = gson.toJson(product);
         startActivity(new Intent(getApplicationContext(),
-                ProductDetailActivity.class).putExtra("data", data));
+                ProductDetailActivity.class).putExtra("product", data));
     }
 }

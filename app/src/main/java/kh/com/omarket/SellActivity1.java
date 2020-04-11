@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import kh.com.omarket.adapter.ProductAdapter;
+import kh.com.omarket.adapters.ProductCategoryAdapter;
 
 public class SellActivity1 extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
@@ -58,9 +58,8 @@ public class SellActivity1 extends AppCompatActivity implements AdapterView.OnIt
     protected void onStart() {
         super.onStart();
         auth.addAuthStateListener(authStateListener);
-        ProductAdapter adapterProductGrid = new ProductAdapter(getApplicationContext(),
-                category);
-        gridView.setAdapter(adapterProductGrid);
+        ProductCategoryAdapter categoryAdapter = new ProductCategoryAdapter(getApplicationContext(), category);
+        gridView.setAdapter(categoryAdapter);
     }
 
     @Override

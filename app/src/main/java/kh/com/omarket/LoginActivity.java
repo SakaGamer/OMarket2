@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private Button btn ;
+    private Button btnLogin ;
     private TextInputEditText edtEmail,edtPassword;
     private TextView txtDontHaveAcc;
     private LinearLayout layout;
@@ -30,13 +30,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        btn = (Button) findViewById(R.id.li_btn_login);
-        edtEmail = (TextInputEditText) findViewById(R.id.li_edt_mail);
-        edtPassword = (TextInputEditText)findViewById(R.id.li_edt_password);
-        txtDontHaveAcc = (TextView)findViewById(R.id.li_txt_dont_have_acc);
-        layout = (LinearLayout)findViewById(R.id.li_layout);
+        btnLogin =  findViewById(R.id.login_btn_login);
+        edtEmail = findViewById(R.id.login_edt_mail);
+        edtPassword = findViewById(R.id.login_edt_password);
+        txtDontHaveAcc = findViewById(R.id.login_txt_dont_have_acc);
+        layout = findViewById(R.id.login_layout);
 
-        btn.setOnClickListener(this);
+        btnLogin.setOnClickListener(this);
         txtDontHaveAcc.setOnClickListener(this);
         layout.setOnClickListener(this);
 
@@ -46,14 +46,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         int id = v.getId();
-        if(id == R.id.li_btn_login) {
+        if(id == btnLogin.getId()) {
             String email = edtEmail.getText().toString();
             String password = edtPassword.getText().toString();
             signIn(email, password);
             finish();
-        } else if(id == R.id.li_layout) {
+        } else if(id == layout.getId()) {
             hideKeyBoard();
-        } else if (id == R.id.li_txt_dont_have_acc) {
+        } else if (id == txtDontHaveAcc.getId()) {
             startActivity(new Intent(getApplicationContext(), RegistrationActivity.class));
             overridePendingTransition(R.anim.start_slide_to_right,R.anim.exit_slide_to_right);
             finish();

@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -24,48 +24,33 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".RegistrationActivity"
+            android:name=".activities.RegistrationActivity"
             android:label="@string/sign_up"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme" />
+            android:parentActivityName=".activities.MainActivity" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".activities.LoginActivity"
             android:label="@string/sign_in"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme" />
+            android:parentActivityName=".activities.MainActivity" />
         <activity
-            android:name=".SellActivity3"
+            android:name=".activities.SellActivity1"
             android:label="@string/sell"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme" />
+            android:parentActivityName=".activities.MainActivity" />
         <activity
-            android:name=".MyProductActivity"
-            android:label="@string/my_product"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme" />
+            android:name=".activities.SellActivity3"
+            android:label="@string/sell"
+            android:parentActivityName=".activities.MainActivity" />
         <activity
-            android:name=".Welcome"
-            android:theme="@style/MyAppTheme.NoActionBar" />
+            android:name=".activities.MyProductActivity"
+            android:parentActivityName=".activities.MainActivity" />
+        <activity android:name=".activities.ProductDetailActivity" />
         <activity
-            android:name=".ProductDetailActivity"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name=".SellActivity1"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name=".FavoriteActivity"
-            android:parentActivityName=".MainActivity" />
-        <activity android:name=".SellActivity4" />
-        <activity android:name=".test"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity
-            android:name=".CustomGallery.activities.AlbumSelectActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".CustomGallery.activities.ImageSelectActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".test2"></activity>
+            android:name=".activities.FavoriteActivity"
+            android:parentActivityName=".activities.MainActivity" />
+        <activity android:name=".activities.test" />
+        <activity android:name=".customGallery.activities.AlbumSelectActivity" />
+        <activity android:name=".customGallery.activities.ImageSelectActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".SellActivity1" />
     </application>
 
 </manifest>

@@ -40,7 +40,7 @@
     <string name="description">Description</string>
     <string name="location">Location</string>
     <string name="price">Price</string>
-    <string name="add_photo">Add Image Resource</string>
+    <string name="add_photo">Choose Image</string>
     <string name="take_photo">Take Photo</string>
     <string name="choose_image">Choose from Library</string>
     <string name="cancel">Cancel</string>
@@ -154,8 +154,8 @@
     <string-array name="locations">
         <item>Banteaymeanchey</item>
         <item>Battambang</item>
-        <item>Kampong Chnang</item>
         <item>Kampong Cham</item>
+        <item>Kampong Chnang</item>
         <item>Kampong Spue</item>
         <item>Kampong Thum</item>
         <item>Kampot</item>
@@ -183,5 +183,8 @@
         <item>Choose from Library</item>
     </string-array>
     <string name="next">Next</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

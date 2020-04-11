@@ -1,26 +1,21 @@
 package kh.com.omarket;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.database.ContentObserver;
 import android.database.Cursor;
 import android.graphics.Bitmap;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
+import android.os.Bundle;
 import android.os.Handler;
-import android.provider.ContactsContract;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.FrameLayout;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -28,24 +23,17 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-
 import junit.framework.Test;
 
-import java.io.File;
 import java.util.ArrayList;
 
-import kh.com.omarket.CustomGallery.ConstantsCustomGallery;
-import kh.com.omarket.CustomGallery.Helper;
-import kh.com.omarket.CustomGallery.activities.AlbumSelectActivity;
-import kh.com.omarket.CustomGallery.activities.HelperActivity;
-import kh.com.omarket.CustomGallery.adapters.CustomImageSelectAdapter;
-import kh.com.omarket.CustomGallery.models.Image;
+import kh.com.omarket.customGallery.ConstantsCustomGallery;
+import kh.com.omarket.customGallery.Helper;
+import kh.com.omarket.customGallery.activities.AlbumSelectActivity;
+import kh.com.omarket.customGallery.adapters.CustomImageSelectAdapter;
 
 import static android.support.v7.appcompat.R.anim.abc_fade_in;
 import static android.support.v7.appcompat.R.anim.abc_fade_out;
-import static kh.com.omarket.R.id.image_select_grid_view;
-import static kh.com.omarket.R.id.image_select_img;
 
 public class test2 extends AppCompatActivity implements
         AdapterView.OnItemClickListener, View.OnClickListener {

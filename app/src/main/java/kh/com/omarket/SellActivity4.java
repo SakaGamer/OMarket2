@@ -34,7 +34,7 @@ public class SellActivity4 extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sell4);
 
-        imgA = (ImageView) findViewById(R.id.s4_img_a);
+        imgA = findViewById(R.id.s4_img_a);
         imgB = (ImageView) findViewById(R.id.s4_img_b);
         imgC = (ImageView) findViewById(R.id.s4_img_c);
         imgD = (ImageView) findViewById(R.id.s4_img_d);
@@ -62,7 +62,6 @@ public class SellActivity4 extends AppCompatActivity implements View.OnClickList
         TextView title = new TextView(getApplicationContext());
         title.setText(R.string.add_photo);
         title.setBackgroundColor(Color.rgb(255, 64, 129));
-        title.setPadding(10, 15, 15, 10);
         title.setGravity(Gravity.CENTER);
         title.setTextColor(Color.WHITE);
         title.setTextSize(18);
@@ -114,8 +113,7 @@ public class SellActivity4 extends AppCompatActivity implements View.OnClickList
                 } catch (Exception e) {
                     Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
                 }   //end catch
-            }   //end if requestCode ==2
-            else if (requestCode == REQUEST_CAMERA) {
+            } else if (requestCode == REQUEST_CAMERA) {
                 try {
                     Bundle bundle = data.getExtras();
                     Bitmap bitmap = (Bitmap) bundle.get("data");
